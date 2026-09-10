@@ -1,0 +1,14 @@
+DATA CLEANING CHANGE LOG - World Happiness Report (2015-2019)
+============================================================
+
+1. Defined a standard column-name mapping so the same real-world concept (e.g. GDP per capita) has ONE consistent name across all 5 files
+2. 2015: renamed columns to standard schema (no columns missing)
+3. 2016: renamed columns to standard schema (no columns missing)
+4. 2017: renamed columns to standard schema (no columns missing)
+5. 2018: renamed columns to standard schema (no columns missing)
+6. 2019: renamed columns to standard schema (no columns missing)
+7. Merged all 5 yearly files into one dataset: 782 rows total (one row per country per year)
+8. Standardized 10 country name variants to match a single spelling per country (e.g. 'Macedonia' -> 'North Macedonia') so year-over-year comparisons for the same country are not broken by spelling differences
+9. Imputed 1 missing 'corruption_perception' value (UAE, 2018) with that year's median (0.082) since it was a single isolated missing value, not a systemic gap
+10. Checked for duplicate (country, year) pairs: found and removed 0
+11. Enforced correct data types: 'rank' and 'year' as integers, all score/metric columns as floats
